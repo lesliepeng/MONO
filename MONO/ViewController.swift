@@ -10,10 +10,12 @@ import UIKit
 import Alamofire
 
 
-
 class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
 
-    var tabview = UITableView()
+    //var tabview = UITableView()
+    //最好这样写
+    var tabview:UITableView!
+    
     var monoData = MonoData()
     var items = NSMutableArray()
     var showItems = NSMutableArray()
@@ -47,6 +49,7 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         
 
         self.tabview = UITableView(frame: self.view.frame, style: UITableViewStyle.Plain)
+        
         self.tabview.dataSource = self;
         self.tabview.delegate = self;
         self.tabview.backgroundColor = UIColor.groupTableViewBackgroundColor()
